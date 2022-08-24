@@ -111,14 +111,14 @@ a {
 }
 
 #yesSSText {
-    font-weight: 800;
+    font-size: 110%;
     background-color: #64C4DE;
-    color: #321d49;
+    color: #fff;
     padding: 8px;
 }
 
 #noSSText {
-    font-weight: 800;
+    font-size: 110%;
     background-color: #BF0978;
     color: #fff;
     padding: 8px;
