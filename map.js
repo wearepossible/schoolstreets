@@ -106,7 +106,7 @@ map.on('click', 'schoolstreets', (e) => {
     // Zoom to location
     map.flyTo({ center: coordinates });
 
-    popup = new mapboxgl.Popup({ offset: 20, maxWidth: '340px' })
+    popup = new mapboxgl.Popup({ offset: 20, maxWidth: '340px', anchor: 'bottom' })
         .setLngLat(coordinates)
         .setHTML(html)
         .addTo(map);
