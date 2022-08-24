@@ -4,8 +4,10 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoid2VhcmVwb3NzaWJsZSIsImEiOiJja2tncjNkdGMxODJ3M
 const urlprefix = window.location.href;
 
 // HTML for map popup
-const startHTML = "<p>Is this the perfect place for a parklet?</p><button class='btn' id='btn-submit' onclick='submit()'>Submit to our database</button>"
-const endHTML = "<p>Thanks! Here's a link to your parklet:</p><input type='text' id='urlboxmap'> <span id='copybutton' onmousedown='copyURL()' onmouseup='unbold()'>copy</span><p>Now <a href='https://action.wearepossible.org/page/103508/action/1?locale=en-GB' target='_blank'>write to your councillor</a> to show your support for parklets.</p>"
+const yesHTML = "<p id='yesSSText'>This school has a school street!</p><p><a href='https://action.wearepossible.org/page/111513/action/1' target='_blank'>Write to your councillor</a> to show your support for more school streets across the city.</p>"
+
+let noHTML = "<p id='noSST ext'>This school lacks a school street.</p><p><a href='https://action.wearepossible.org/page/111513/action/1' target='_blank'>Write to your councillor</a> to request one and show your support for more school streets across the city.</p>"
+
 let popup
 
 // Set up the map
@@ -91,8 +93,10 @@ map.on('click', 'schoolstreets', (e) => {
         coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
     }
 
+    noHTML = `<p id='noSSText'>This school lacks a school street.</p><p><a href='https://action.wearepossible.org/page/111513/action/1?supporter.questions.1365176=${name}' target='_blank'>Write to your councillor</a> to request one and show your support for more school streets across the city.</p>`
+
     // Figure out if it has a school street
-    const ss = ss_status ? "This school has a school street." : "This school does not have a school street."
+    const ss = ss_status ? yesHTML : noHTML
 
     const html = `<div class="popup">
     <h3>${name}</h3>

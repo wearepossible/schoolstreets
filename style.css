@@ -110,6 +110,20 @@ a {
     margin-bottom: 0;
 }
 
+#yesSSText {
+    font-weight: 800;
+    background-color: #64C4DE;
+    color: #321d49;
+    padding: 8px;
+}
+
+#noSSText {
+    font-weight: 800;
+    background-color: #BF0978;
+    color: #fff;
+    padding: 8px;
+}
+
 #buttons * {
     margin: 5px auto;
     text-align: center;
