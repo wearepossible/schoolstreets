@@ -4,9 +4,9 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoid2VhcmVwb3NzaWJsZSIsImEiOiJja2tncjNkdGMxODJ3M
 const urlprefix = window.location.href;
 
 // HTML for map popup
-const yesHTML = "<p id='yesSSText'>This school has a school street!</p><p><a href='https://action.wearepossible.org/page/111513/action/1' target='_blank'>Write to your councillor</a> to show your support for more school streets across the city.</p>"
+const yesHTML = "<p id='yesSSText'>This school has a school street!</p><p><a href='https://action.wearepossible.org/page/112036/action/1' target='_blank'>Write to your councillor</a> to show your support for more school streets across the city.</p>"
 
-let noHTML = "<p id='noSST ext'>This school lacks a school street.</p><p><a href='https://action.wearepossible.org/page/111513/action/1' target='_blank'>Write to your councillor</a> to request one and show your support for more school streets across the city.</p>"
+let noHTML = "<p id='noSST ext'>This school lacks a school street.</p><p><a href='https://action.wearepossible.org/page/112036/action/1' target='_blank'>Write to your councillor</a> to request one and show your support for more school streets across the city.</p>"
 
 let popup
 
