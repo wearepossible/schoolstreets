@@ -25,6 +25,7 @@ map.addControl(new mapboxgl.NavigationControl());
 const gotoBirmingham = () => map.flyTo({ center: [-1.88, 52.48], zoom: 11 });
 const gotoLeeds = () => map.flyTo({ center: [-1.55, 53.80], zoom: 11 });
 const gotoBristol = () => map.flyTo({ center: [-2.59, 51.45], zoom: 11 });
+const gotoLondon = () => map.flyTo({ center: [-0.12, 51.51], zoom: 10 });
 
 // Create a function that executes when the button is clicked
 const locApprove = () => {
@@ -77,10 +78,7 @@ if (window.location.hash) {
 }
 
 // Click to place a parklet
-map.on('click', 'schoolstreets', function (e) {
-});
-
-map.on('click', 'schoolstreets', (e) => {
+function streetcheck(e) {
     // Copy coordinates array.
     const coordinates = e.features[0].geometry.coordinates.slice();
     const name = e.features[0].properties["name"];
@@ -110,7 +108,10 @@ map.on('click', 'schoolstreets', (e) => {
         .setLngLat(coordinates)
         .setHTML(html)
         .addTo(map);
-});
+}
+
+map.on('click', 'schoolstreets', streetcheck);
+map.on('click', 'schoolstreets_london', streetcheck);
 
 // Change the cursor to a pointer when the mouse is over the places layer.
 map.on('mouseenter', 'schoolstreets', function () {
@@ -119,6 +120,15 @@ map.on('mouseenter', 'schoolstreets', function () {
 
 // Change it back to a pointer when it leaves.
 map.on('mouseleave', 'schoolstreets', function () {
+    map.getCanvas().style.cursor = '';
+});
+
+map.on('mouseenter', 'schoolstreets_london', function () {
+    map.getCanvas().style.cursor = 'pointer';
+});
+
+// Change it back to a pointer when it leaves.
+map.on('mouseleave', 'schoolstreets_london', function () {
     map.getCanvas().style.cursor = '';
 });
 
