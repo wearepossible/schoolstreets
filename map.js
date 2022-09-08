@@ -25,7 +25,7 @@ map.addControl(new mapboxgl.NavigationControl());
 const gotoBirmingham = () => map.flyTo({ center: [-1.88, 52.48], zoom: 11 });
 const gotoLeeds = () => map.flyTo({ center: [-1.55, 53.80], zoom: 11 });
 const gotoBristol = () => map.flyTo({ center: [-2.59, 51.45], zoom: 11 });
-const gotoLondon = () => map.flyTo({ center: [-0.12, 51.51], zoom: 10 });
+const gotoLondon = () => map.flyTo({ center: [-0.12, 51.51], zoom: 11 });
 
 // Create a function that executes when the button is clicked
 const locApprove = () => {
