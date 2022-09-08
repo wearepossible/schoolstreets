@@ -127,6 +127,7 @@ a {
 #buttons * {
     margin: 5px auto;
     text-align: center;
+    font-family: 'Poppins', sans-serif;
 }
 
 #legend {
